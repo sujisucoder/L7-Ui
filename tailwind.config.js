@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         primaryBlue: '#2A8BF2',
+        btnYellow: '#FFBE55'
       }
     },
   },

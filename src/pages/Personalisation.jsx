@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Search = () => {
     return (
-        <div className='p-20 grid justify-center items-center'>
+        <div className='p-10 grid justify-center items-center'>
             <div className='pb-8'>
                 <h1 className='text-3xl font-bold'>
                     Select 3 or more interested <span className='text-primaryBlue'>Jobs</span>
@@ -51,13 +51,13 @@ const CustomCheckbox = () => {
     };
 
     return (
-        <div className='p-4'>
+        <div className='p-2'>
             <form>
-                <div className='grid grid-cols-2 md:grid-cols-4 gap-4 p-20'>
+                <div className='  grid grid-cols-2 md:grid-cols-4 gap-2 p-5'>
                     {checkboxes.map((checkbox, index) => (
                         <label
                             key={index}
-                            className={`inline-block border-2 ${checkedItems[index] ? 'text-white bg-blue-500 opacity-100' : 'text-blue-500 bg-transparent opacity-50'} p-2 rounded-full cursor-pointer font-bold`}
+                            className={`border-2 border-primaryBlue  inline-block  ${checkedItems[index] ? 'text-white bg-blue-500 opacity-100' : 'text-blue-500 bg-transparent opacity-50'} p-1 rounded-full cursor-pointer font-bold`}
                             onMouseEnter={() => {
                                 if (!checkedItems[index]) {
                                     setCheckedItems({
@@ -93,22 +93,44 @@ const CustomCheckbox = () => {
 const Personalisation = () => {
     return (
         <div className='relative'>
-            <div className=''>
-                <button className='border-2 border-primaryBlue px-3 m-10 text-primaryBlue rounded-2xl'>Skip</button>
+            <div className=' absolute left-0 top-0'>
+                <button className='border-2 border-primaryBlue px-6 m-10 text-primaryBlue rounded-2xl'>Skip</button>
             </div>
-            <div className='absolute top-0 right-0 overflow-hidden'>
-                <svg width='332' height='368' viewBox='0 0 332 368' fill='none' xmlns='http://www.w3.org/2000/svg'>
+            <div className='absolute top-[-20px] right-0 overflow-hidden'>
+                <svg width='132' height='168' viewBox='0 0 332 368' fill='none' xmlns='http://www.w3.org/2000/svg'>
                     <path d='M449.285 236.424C460.099 220.016 468.167 202.509 473.402 184.452L516.142 176.994L516.571 133.737L517 90.4805L474.517 82.2374C469.626 64.1024 461.901 46.4385 451.431 29.8737L475.805 -3.02039L442.677 -33.8734L409.635 -64.7263L373.246 -43.0586C355.309 -52.9504 336.17 -60.33 316.431 -65.1188L308.278 -104.215L260.989 -104.607L213.7 -105L204.689 -66.0609C184.864 -61.5861 165.553 -54.5205 147.445 -44.9427L111.485 -67.2385L77.756 -36.9351L44.0274 -6.7102L67.7147 26.5764C56.9009 42.9842 48.8335 60.4911 43.5983 78.5475L0.858234 86.0056L0.429117 129.263L0 172.52L42.5684 180.763C47.4603 198.898 55.1844 216.562 65.6549 233.126L41.2811 266.02L74.4089 296.873L107.537 327.726L143.926 306.059C161.863 315.95 181.002 323.33 200.741 328.119L208.894 367.215L256.183 367.607L303.471 368L312.483 329.061C332.308 324.586 351.618 317.521 369.727 307.943L405.687 330.239L439.416 299.935L473.144 269.632L449.285 236.424ZM175.852 205.728C131.052 163.962 131.739 96.8395 177.397 55.8593C223.055 14.879 296.434 15.5071 341.234 57.2724C386.034 99.0377 385.347 166.16 339.689 207.141C294.031 248.121 220.652 247.493 175.852 205.728Z' fill='#2A8BF2' />
                 </svg>
             </div>
-            <div>
-                <Search />
+            {/* content starts */}
+            <div className=' '>
+                <div className=''>
+                    <Search />
+                </div>
+                <div className=' '>
+                    <CustomCheckbox />
+                </div>
             </div>
-            <div>
-                <CustomCheckbox />
-            </div>
-            <div className='absolute bottom-[-460px]'>
-                <svg width='200' height='187' viewBox='0 0 200 187' fill='none' xmlns='http://www.w3.org/2000/svg'>
+            {/* content ends */}
+            <div className='absolute right-20'>
+    <button className='border-2 border-btnYellow p-5 text-btnYellow rounded-full'>
+        <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M12 4L10.59 5.41 16.17 11H4V13H16.17L10.59 18.59L12 20L20 12L12 4Z"
+                fill="currentColor"
+            />
+        </svg>
+    </button>
+</div>
+
+
+            <div className='absolute bottom-[-100px]'>
+                <svg width='100' height='93' viewBox='0 0 200 187' fill='none' xmlns='http://www.w3.org/2000/svg'>
                     <path d='M159.659 204.999C166.102 195.147 170.908 184.635 174.027 173.794L199.489 169.316L199.744 143.343L200 117.371L174.691 112.422C171.777 101.533 167.175 90.9271 160.938 80.9812L175.458 61.2309L155.722 42.706L136.038 24.1812L114.359 37.191C103.673 31.2518 92.2716 26.8209 80.512 23.9456L75.6547 0.471369L47.4827 0.235685L19.3108 0L13.9423 23.3799C2.13149 26.0667 -9.3725 30.309 -20.1607 36.0597L-41.5837 22.6729L-61.6773 40.8677L-81.7709 59.0154L-67.6594 79.0015C-74.1016 88.8531 -78.9077 99.3646 -82.0266 110.206L-107.489 114.684L-107.744 140.657L-108 166.629L-82.6401 171.578C-79.7258 182.467 -75.1242 193.073 -68.8865 203.019L-83.407 222.769L-63.6713 241.294L-43.9356 259.819L-22.257 246.809C-11.571 252.748 -0.169312 257.179 11.5903 260.054L16.4476 283.529L44.6195 283.764L72.7915 284L78.16 260.62C89.9708 257.933 101.475 253.691 112.263 247.94L133.686 261.327L153.78 243.132L173.873 224.937L159.659 204.999ZM-3.23704 186.568C-29.9263 161.491 -29.5173 121.189 -2.31673 96.5836C24.8838 71.9781 68.5989 72.3552 95.2882 97.432C121.977 122.509 121.568 162.811 94.3679 187.416C67.1673 212.022 23.4522 211.645 -3.23704 186.568Z' fill='#FFBE55' />
                 </svg>
             </div>

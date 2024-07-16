@@ -5,6 +5,7 @@ import './App.css'
 import Personalisation from './pages/Personalisation'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
+import JobsList from './pages/JobsList'
 
 function App() {
  
@@ -13,7 +14,9 @@ function App() {
     <>
       {/* <Personalisation /> */}
       {/* <Signup /> */}
-      <Login />
+      {/* <Login /> */}
+      <JobsList/>
+
     </>
   )
 }
